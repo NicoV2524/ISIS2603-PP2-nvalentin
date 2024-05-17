@@ -1,3 +1,39 @@
-<p>
-  nave-list works!
-</p>
+<img
+          class="card-img-top"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png"
+          alt="Logo"
+        />
+<div class="row">
+<div class="col-4">
+  <h3>Naves de la rebelion: {{numeroRebeldes}}</h3>
+</div>
+<div class="col-4">
+  <h3>Naves del Imperio: {{numeroImperiales}}</h3>
+</div>
+<div class="col-4">
+  <h3>Naves Neutrales: {{numeroNeutrales}}</h3>
+</div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col mb-2" *ngFor="let nave of naves">
+      <div class="card p-2" style="width: 15rem; height: 33rem">
+        <img
+          class="card-img-top"
+          src="{{ nave.imagen }}"
+          alt="{{ nave.nombre }}"
+          (click)="onSelected(nave)"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ nave.nombre }}</h5>
+          <p class="card-text">[{{ nave.descripcion }}]</p>
+          <p class="card-text">[{{ nave.empresa_fabricacion }}]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="selected">
+  <app-nave-detail [naveDetail]="selectedNave"></app-nave-detail>
+</div>

@@ -5,10 +5,11 @@ export class Nave {
     raza_origen: string;
     imagen: string;
     costo: string;
-    descripcion: string
+    descripcion: string;
+    bando: string;
 
 
-    constructor( id:number, nombre: string, empresa_fabricacion: string,raza_origen: string, imagen: string,costo: string,descripcion: string){
+    constructor( id:number, nombre: string, empresa_fabricacion: string,raza_origen: string, imagen: string,costo: string,descripcion: string, bando:string){
         this.id=id
         this.nombre=nombre
         this.empresa_fabricacion=empresa_fabricacion
@@ -16,6 +17,7 @@ export class Nave {
         this.imagen=imagen
         this.costo = costo
         this.descripcion=descripcion
+        this.bando = bando
     }
 }
 
